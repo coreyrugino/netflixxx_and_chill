@@ -1,0 +1,24 @@
+<%= form @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <br />
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br />
+  <%= f.label :sex %>
+  <%= f.select :sex,['male', 'female', 'other'] %>
+  <br />
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <br />
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br />
+  <%= f.label "Relationship Status" %>
+  <%= f.text_area :status %>
+  <br />
+  <%= f.submit %>
+<% end %>

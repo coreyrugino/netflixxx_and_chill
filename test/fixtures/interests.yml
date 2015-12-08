@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interested_in: MyText
+  cats: false
+  dogs: false
+
+two:
+  interested_in: MyText
+  cats: false
+  dogs: false
