@@ -1,4 +1,20 @@
-<h1>Welcome <%= current_user.email %></h1>
+<h1>Welcome to Netflixxx&Chill<%= current_user.first_name %></h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<% unless current_user.first_name %>
+  <h2>Please Update your Profile </h2>
+<% else %>
+  <h3>First Name: </h3>
+  <%= current_user.first_name %>
+  <%= current_user.last_name %>
+  <%= current_user.email %>
+  <%= current_user.age %>
+  <%= current_user.sex %>
+  <%= current_user.status %>
+  <%= current_user.title %>
+  <%= current_user.body %>
+
+<% end %>
+
+<%= button_to 'Edit Profile', user_edit_path(current_user), method: :get %>
+<%= button_to 'Logout', destroy_user_session_path, method: :delete %>
