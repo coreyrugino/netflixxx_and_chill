@@ -1,4 +1,4 @@
-<h1>Welcome to NetflixxxAndChill!</h1>
+<h2><%= Here You Are %></h2>
   <h3>First Name: </h3>
   <p><%= current_user.first_name %>
   <h3>Last Name: </h3>
@@ -17,5 +17,4 @@
   <%= current_user.body %></p>
 
   <%= button_to 'Edit Profile', edit_user_registration_path(current_user), method: :get %>
-  <%= button_to 'Interests', user_interests_path(current_user), method: :get %>
-  <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+  <%= button_to 'Edit Interests', edit_interest_path(current_user), method: :get %>

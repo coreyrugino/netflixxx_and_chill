@@ -2,9 +2,9 @@
 <% if @user.interest.any? %>
 <% binding.pry %>
    <h3>Animal Preferences</h3>
-   <h4>Dogs: <%= @user.interest.dogs %></h4>
+   <h4>Dogs: <%= @interest.dogs %></h4>
    <h4>Cats: <%= @interest.cats %></h4>
-  <%= button_to 'Edit Interests', edit_user_interest_path(user_id: @user.id, id: @interest.id), method: :get, class: 'btn' %>
+  <%= button_to 'Edit Interests', edit_user_interest_path(@interest), method: :get, class: 'btn' %>
 <% else %>
   <%= button_to 'Create Interests', new_user_interest_path(user_id: @user.id), method: :get, class: 'btn' %>
 <% end %>

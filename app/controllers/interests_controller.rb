@@ -28,7 +28,6 @@ class InterestsController < ApplicationController
   end
 
   def update
-
     if @interest.update(interest_params)
       redirect_to user_interests_path(@user)
     else
