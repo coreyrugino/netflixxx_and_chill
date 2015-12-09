@@ -1,23 +1,13 @@
 Rails.application.routes.draw do
-  get 'interest/index'
 
-  get 'interest/show'
-
-  get 'interest/edit'
-
-  get 'interest/new'
-
-  get 'user/index'
-
-  get 'user/show'
-
-  get 'user/edit'
-
-  get 'user/new'
 
   #root to: 'home#index'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations'} 
+
+  resources :users do
+    resources :interests
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

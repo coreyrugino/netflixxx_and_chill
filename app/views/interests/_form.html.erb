@@ -1,0 +1,25 @@
+<div class="input-field">
+<%= form_for [@user, @interest] do |f| %>
+  <h4>Who do you want to chill with?</h4>
+  <%= f.radio_button :interested_in, 'male', id: 'interest_male', name: 'interested_in' %>  
+  <%= f.label 'male' %>
+  <br />
+  <%= f.radio_button :interested_in, 'female', id: 'interest_female', name: 'interested_in' %>  
+  <%= f.label 'female' %>
+  <br />
+  <%= f.radio_button :interested_in, 'both', id: 'interest_both', name: 'interested_in' %>  
+  <%= f.label 'both' %>
+  <br />
+  <h4>What do you prefer?</h4>
+  <%= f.check_box :cats, :id => 'cats' , :checked_value => true, :unchecked_value => false %>
+  <%= f.label :cats, :for => 'cats' %>
+  <br />
+    <%= f.check_box :dogs, :id => 'dogs', :checked_value => true, :unchecked_value => false %>
+    <%= f.label :dogs, :for => 'dogs' %>
+  <br />
+  <%= f.hidden_field :user_id %>
+
+  <br />
+  <%= f.submit class: 'btn' %>
+<% end %>
+</div>

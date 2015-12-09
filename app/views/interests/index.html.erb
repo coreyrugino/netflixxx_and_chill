@@ -1,0 +1,7 @@
+<h1>Your Interests</h1>
+<% if @user.interest %>
+  <p>make some, bitch </p>
+  <%= button_to 'Edit Interests', edit_user_interest_path(@user.id), method: :get, class: 'btn' %>
+<% else %>
+  <%= button_to 'Create Interests', new_user_interest_path(@user.id), method: :get, class: 'btn' %>
+<% end %>
