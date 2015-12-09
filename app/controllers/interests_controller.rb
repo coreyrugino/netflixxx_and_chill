@@ -1,5 +1,5 @@
 class InterestsController < ApplicationController
-  before_action :find_user, only: [:index, :create, :new]
+  before_action :find_user, only: [:index, :create, :new, :edit, :update]
   before_action :find_interest, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,12 +10,10 @@ class InterestsController < ApplicationController
   end
 
   def new
-    @user = current_user
-    @interest = Interest.new(user_id: @user)
+    @interest = Interest.new(user_id: params[:user_id])
   end
   
   def create
-    binding.pry
     @interest = Interest.new(interest_params)
     if @interest.save
       redirect_to user_interests_path(@user)
@@ -26,9 +24,16 @@ class InterestsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+
+    if @interest.update(interest_params)
+      redirect_to user_interests_path(@user)
+    else
+      render :edit
+    end
 
   end
 
