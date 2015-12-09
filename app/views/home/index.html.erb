@@ -17,5 +17,5 @@
   <%= current_user.body %></p>
 
   <%= button_to 'Edit Profile', edit_user_registration_path(current_user), method: :get %>
-  <%= button_to 'Interests', user_interests_path(current_user), method: :get %>
+  <%= button_to 'Interests', interests_path(current_user), method: :get %>
   <%= button_to 'Logout', destroy_user_session_path, method: :delete %>

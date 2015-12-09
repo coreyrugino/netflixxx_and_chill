@@ -1,5 +1,5 @@
 <div class="input-field">
-<%= form_for [@user, @interest ] do |f| %>
+<%= form_for @interest do |f| %>
   <h4>Who do you want to chill with?</h4>
   <%= f.radio_button :interested_in, 'male', name: 'interested_in' %>  
   <%= f.label 'male', :value => 'male' %>

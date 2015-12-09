@@ -3,20 +3,20 @@ class InterestsController < ApplicationController
   before_action :find_interest, only: [:show, :edit, :update, :destroy]
 
   def index
-    @interest = @user.interest 
+    @interests = @user.interest
   end
 
   def show
   end
 
   def new
-    @interest = Interest.new(user_id: params[:user_id])
+    @interest = Interest.new
   end
   
   def create
-    @interest = Interest.new(interest_params)
+    @interest = current_user.interest.new(interest_params)
     if @interest.save
-      redirect_to user_interests_path(@user)
+      redirect_to interests_path(@user)
     else
       render :new
     end
@@ -40,16 +40,16 @@ class InterestsController < ApplicationController
   end
 
   private 
-    def interest_params
-      params.require(:interest).permit(:interested_in, :cats, :dogs, :user_id)
-    end
 
-    def find_user
-      @user = User.find(params[:user_id])
-    end
+  def interest_params
+    params.require(:interest).permit(:interested_in, :cats, :dogs, :user_id)
+  end
 
-    def find_interest
-      @interest = Interest.find(params[:id])
-    end
+  def find_user
+    @user = User.find(current_user)
+  end
 
+  def find_interest
+    @interest = current_user.interests.find(params[:id])
+  end
 end
