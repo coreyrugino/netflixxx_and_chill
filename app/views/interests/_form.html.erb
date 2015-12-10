@@ -17,7 +17,7 @@
   <%= f.check_box :dogs, :id => 'dogs' %>
   <%= f.label :dogs, :for => 'dogs' %>
   <br />
-  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <br />
   <%= f.submit class: 'btn' %>
 <% end %>
