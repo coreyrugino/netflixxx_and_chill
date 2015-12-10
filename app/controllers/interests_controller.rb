@@ -24,12 +24,12 @@ class InterestsController < ApplicationController
   end
 
   def edit
-
+    binding.pry
   end
 
   def update
     if @interest.update(interest_params)
-      redirect_to user_interests_path(@user)
+      redirect_to interests_path(@user)
     else
       render :edit
     end
@@ -50,6 +50,6 @@ class InterestsController < ApplicationController
   end
 
   def find_interest
-    @interest = current_user.interests.find(params[:id])
+    @interest = current_user.interest.find(params[:id])
   end
 end
