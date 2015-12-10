@@ -14,3 +14,16 @@
  *= require_self
  */
 @import 'materialize';
+
+.text_alter label{
+  font-size: 25px !important;
+}
+
+.text_alter input{
+  font-size: 20px !important;
+}
+
+.negate_margin {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
