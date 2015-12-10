@@ -1,11 +1,18 @@
-<h1>Your Interests</h1>
+<div class="teal lighten-5">
+  
+<h2 class='teal negate_margin center-align'>Your Interests</h2>
+  <div class='text_alter row'>
+    <div class='col s10 offset-s1'>
+
 <% if @interest %>
    <h3>With whom would you like to chill?</h3>
-   <h4>Interested In: <%= @interest.interested_in %></h4>
-   <h3>Animal Preferences</h3>
-   <h4>Cats: <%= @interest.cats %></h4>
-   <h4>Dogs: <%= @interest.dogs %></h4>
+   <h4 class='col s9 offset-s2'>Interested In: <%= @interest.interested_in %></h4>
+   <h3>Animal Preferences:</h3>
+   <h4 class='col s9 offset-s2'>Cats: <%= @interest.cats %></h4>
+   <h4 class='col s9 offset-s2'>Dogs: <%= @interest.dogs %></h4>
   <%= button_to 'Edit Interests', edit_interest_path(@interest), method: :get, class: 'btn' %>
 <% else %>
+  <h4>You haven't created any interests yet.</h4>
   <%= button_to 'Create Interests', new_interest_path(user_id: @user.id), method: :get, class: 'btn' %>
 <% end %>
+</div>
