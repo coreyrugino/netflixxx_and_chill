@@ -1,1 +1,9 @@
-<%= link_to 'Home', root_path %>
+  <div class="side-nav fixed resize-navbar">
+    <%= link_to 'Home', root_path, class: 'btn' %>
+
+    <%= link_to 'Your Profile', user_registration_path(current_user), class: 'btn' %>
+
+    <%= link_to 'Your Interests', interests_path(current_user), class: 'btn' %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn' %>
+
+  </div>

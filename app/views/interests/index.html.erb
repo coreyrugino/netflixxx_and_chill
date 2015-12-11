@@ -15,4 +15,5 @@
   <h4>You haven't created any interests yet.</h4>
   <%= button_to 'Create Interests', new_interest_path(user_id: @user.id), method: :get, class: 'btn' %>
 <% end %>
+<%= render "layouts/navbar" %>
 </div>

@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<%= render(partial:'layouts/navbar') %>
+<body class="col s9 offset-s3">
 <p class="teal notice negate_margin"><%= notice %></p>
 <p class="teal alert negate_margin"><%= alert %></p>
 <%= yield %>
